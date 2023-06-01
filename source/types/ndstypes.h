@@ -168,4 +168,49 @@ typedef struct nds_fplane
 #define NDS_512MiB (0x20000000)
 #define NDS_1GiB   (0x40000000)
 
+#define HEADER_SIZE 8192
+
+typedef struct {
+    unsigned char gameTitle[13];
+    unsigned char gameCode[5];
+    unsigned char makerCode[3];
+    unsigned char unitCode;
+    unsigned char encryptionSeed[2];
+    unsigned char deviceCapacity;
+    unsigned char reserved[9];
+    unsigned char romVersion;
+    unsigned char internalFlags;
+    unsigned int arm9RomOffset;
+    unsigned int arm9EntryAddress;
+    unsigned int arm9RamAddress;
+    unsigned int arm9Size;
+    unsigned int arm7RomOffset;
+    unsigned int arm7EntryAddress;
+    unsigned int arm7RamAddress;
+    unsigned int arm7Size;
+    unsigned int fntOffset;
+    unsigned int fntSize;
+    unsigned int fatOffset;
+    unsigned int fatSize;
+    unsigned int arm9OverlayOffset;
+    unsigned int arm9OverlaySize;
+    unsigned int arm7OverlayOffset;
+    unsigned int arm7OverlaySize;
+    unsigned short normalCardControlRegSettings;
+    unsigned short secureCardControlRegSettings;
+    unsigned int iconTitleOffset;
+    unsigned short secureAreaChecksum;
+    unsigned short secureAreaDelay;
+    unsigned int arm9AutoLoadListRamAddress;
+    unsigned int arm7AutoLoadListRamAddress;
+    unsigned short secureAreaDisable;
+    unsigned short ntrRegionRomSize;
+    unsigned short ntrRegionRuntimeSize;
+    unsigned int totalRomSize;
+    unsigned short romHeaderSize;
+    unsigned short reserved2;
+    unsigned short logoChecksum;
+    unsigned short headerChecksum;
+} ndsrom_header;
+
 #endif // NDSTYPES_H_INCLUDED
