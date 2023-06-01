@@ -3,8 +3,6 @@
 
 #include <types/ndstypes.h>
 
-ndsrom_header current_header;
-
 int cartRead_init();
 unsigned char* cartRead_get_gameTitle();
 unsigned char* cartRead_get_gameCode();
@@ -46,5 +44,47 @@ unsigned short cartRead_get_romHeaderSize();
 unsigned short cartRead_get_reserved2();
 unsigned short cartRead_get_logoChecksum();
 unsigned short cartRead_get_headerChecksum();
+unsigned int cartRead_get_arm9IconOffset();
+unsigned int cartRead_get_arm9IconSize();
+unsigned int cartRead_get_arm7IconOffset();
+unsigned int cartRead_get_arm7IconSize();
+unsigned int cartRead_get_titleLogoOffset();
+unsigned int cartRead_get_titleLogoSize();
+unsigned int cartRead_get_secureAreaCrc();
+unsigned int cartRead_get_romSize();
+unsigned int cartRead_get_saveType();
+unsigned int* cartRead_get_reserved3();
+unsigned int cartRead_get_arm9LoadAddress();
+unsigned int cartRead_get_arm7LoadAddress();
+unsigned char* cartRead_get_reserved4();
+unsigned short cartRead_get_region();
+unsigned char* cartRead_get_reserved5();
+unsigned int cartRead_get_arm9OverlayJumpTableOffset();
+unsigned int cartRead_get_arm7OverlayJumpTableOffset();
+unsigned int* cartRead_get_reserved6();
+unsigned int cartRead_get_bannerOffset();
+unsigned char* cartRead_get_reserved7();
+unsigned int cartRead_get_secureTransferTimeout();
+unsigned int cartRead_get_arm9AutoloadListRamAddressEnd();
+unsigned int cartRead_get_arm7AutoloadListRamAddressEnd();
+unsigned char* cartRead_get_reserved8();
+unsigned char cartRead_get_ntrRegionRomVersion();
+unsigned char* cartRead_get_reserved9();
+unsigned int cartRead_get_defaultTiming();
+unsigned int cartRead_get_arm9AutoloadListRamAddressMain();
+unsigned int cartRead_get_arm7AutoloadListRamAddressMain();
+unsigned int* cartRead_get_reserved10();
+unsigned int cartRead_get_filenameTableOffset();
+unsigned int cartRead_get_filenameTableSize();
+unsigned int cartRead_get_fileAllocationTableOffset();
+unsigned int cartRead_get_fileAllocationTableSize();
+unsigned int cartRead_get_filenameTable2Offset();
+unsigned int cartRead_get_filenameTable2Size();
+unsigned int cartRead_get_fileAllocationTable2Offset();
+unsigned int cartRead_get_fileAllocationTable2Size();
+unsigned int cartRead_get_bannerAnimationOffset();
+unsigned int* cartRead_get_reserved11();
+unsigned char cartRead_get_ndsRegion();
+unsigned char* cartRead_get_reserved12();
 
 #endif // CART_READ_H_INCLUDED

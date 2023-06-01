@@ -6,6 +6,8 @@
 #include <util/util_log.h>
 #include <cart/cart_read.h>
 
+ndsrom_header current_header;
+
 int cartRead_init()
 {
     LOG("Starting cartRead...");
@@ -224,4 +226,214 @@ unsigned short cartRead_get_logoChecksum()
 unsigned short cartRead_get_headerChecksum()
 {
     return current_header.headerChecksum;
+}
+
+unsigned int cartRead_get_arm9IconOffset()
+{
+    return current_header.arm9IconOffset;
+}
+
+unsigned int cartRead_get_arm9IconSize()
+{
+    return current_header.arm9IconSize;
+}
+
+unsigned int cartRead_get_arm7IconOffset()
+{
+    return current_header.arm7IconOffset;
+}
+
+unsigned int cartRead_get_arm7IconSize()
+{
+    return current_header.arm9IconSize;
+}
+
+unsigned int cartRead_get_titleLogoOffset()
+{
+    return current_header.titleLogoOffset;
+}
+
+unsigned int cartRead_get_titleLogoSize()
+{
+    return current_header.titleLogoSize;
+}
+
+unsigned int cartRead_get_secureAreaCrc()
+{
+    return current_header.secureAreaCrc;
+}
+
+unsigned int cartRead_get_romSize()
+{
+    return current_header.romSize;
+}
+
+unsigned int cartRead_get_saveType()
+{
+    return current_header.saveType;
+}
+
+unsigned int* cartRead_get_reserved3()
+{
+    return current_header.reserved3;
+}
+
+unsigned int cartRead_get_arm9LoadAddress()
+{
+    return current_header.arm9LoadAddress;
+}
+
+unsigned int cartRead_get_arm7LoadAddress()
+{
+    return current_header.arm7LoadAddress;
+}
+
+unsigned char* cartRead_get_reserved4()
+{
+    return current_header.reserved4;
+}
+
+unsigned short cartRead_get_region()
+{
+    return current_header.region;
+}
+
+unsigned char* cartRead_get_reserved5()
+{
+    return current_header.reserved5;
+}
+
+unsigned int cartRead_get_arm9OverlayJumpTableOffset()
+{
+    return current_header.arm9OverlayJumpTableOffset;
+}
+
+unsigned int cartRead_get_arm7OverlayJumpTableOffset()
+{
+    return current_header.arm7OverlayJumpTableOffset;
+}
+
+unsigned int* cartRead_get_reserved6()
+{
+    return current_header.reserved6;
+}
+
+unsigned int cartRead_get_bannerOffset()
+{
+    return current_header.bannerOffset;
+}
+
+unsigned char* cartRead_get_reserved7()
+{
+    return current_header.reserved7;
+}
+
+unsigned int cartRead_get_secureTransferTimeout()
+{
+    return current_header.secureTransferTimeout;
+}
+
+unsigned int cartRead_get_arm9AutoloadListRamAddressEnd()
+{
+    return current_header.arm9AutoloadListRamAddressEnd;
+}
+
+unsigned int cartRead_get_arm7AutoloadListRamAddressEnd()
+{
+    return current_header.arm7AutoloadListRamAddressEnd;
+}
+
+unsigned char* cartRead_get_reserved8()
+{
+    return current_header.reserved8;
+}
+
+unsigned char cartRead_get_ntrRegionRomVersion()
+{
+    return current_header.ntrRegionRomVersion;
+}
+
+unsigned char* cartRead_get_reserved9()
+{
+    return current_header.reserved9;
+}
+
+unsigned int cartRead_get_defaultTiming()
+{
+    return current_header.defaultTiming;
+}
+
+unsigned int cartRead_get_arm9AutoloadListRamAddressMain()
+{
+    return current_header.arm9AutoloadListRamAddressMain;
+}
+
+unsigned int cartRead_get_arm7AutoloadListRamAddressMain()
+{
+    return current_header.arm7AutoloadListRamAddressMain;
+}
+
+unsigned int* cartRead_get_reserved10()
+{
+    return current_header.reserved10;
+}
+
+unsigned int cartRead_get_filenameTableOffset()
+{
+    return current_header.filenameTableOffset;
+}
+
+unsigned int cartRead_get_filenameTableSize()
+{
+    return current_header.filenameTableSize;
+}
+
+unsigned int cartRead_get_fileAllocationTableOffset()
+{
+    return current_header.fileAllocationTableOffset;
+}
+
+unsigned int cartRead_get_fileAllocationTableSize()
+{
+    return current_header.fileAllocationTableSize;
+}
+
+unsigned int cartRead_get_filenameTable2Offset()
+{
+    return current_header.filenameTable2Offset;
+}
+
+unsigned int cartRead_get_filenameTable2Size()
+{
+    return current_header.filenameTable2Size;
+}
+
+unsigned int cartRead_get_fileAllocationTable2Offset()
+{
+    return current_header.fileAllocationTable2Offset;
+}
+
+unsigned int cartRead_get_fileAllocationTable2Size()
+{
+    return current_header.fileAllocationTable2Size;
+}
+
+unsigned int cartRead_get_bannerAnimationOffset()
+{
+    return current_header.bannerAnimationOffset;
+}
+
+unsigned int* cartRead_get_reserved11()
+{
+    return current_header.reserved11;
+}
+
+unsigned char cartRead_get_ndsRegion()
+{
+    return current_header.ndsRegion;
+}
+
+unsigned char* cartRead_get_reserved12()
+{
+    return current_header.reserved12;
 }
