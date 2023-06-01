@@ -1,0 +1,8 @@
+*.cbp
+*.layout
+*.depend
+*.gch
+*.o
+*.d
+/source/bin/
+/source/obj/
