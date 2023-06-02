@@ -18,9 +18,9 @@ typedef double float64; // 64 bit signed floating point number
 typedef volatile float vfloat32; // 32 bit volatile signed floating point number
 typedef volatile double vfloat64; // 64 bit volatile signed floating point number
 
-typedef int8_t int8; // 8 bit signed integer
-typedef int16_t int16; // 16 bit signed integer
-typedef int32_t int32; // 32 bit signed integer
+typedef int8_t int8; // 8 bit signed integer AKA byte
+typedef int16_t int16; // 16 bit signed integer AKA halfword
+typedef int32_t int32; // 32 bit signed integer AKA word
 typedef int64_t int64; // 64 bit signed integer
 typedef intmax_t intMax; // <Maximum> bit signed integer (usually 32 or 64 bit)
 
@@ -170,7 +170,8 @@ typedef struct nds_fplane
 
 #define HEADER_SIZE 8192
 
-typedef struct {
+typedef struct
+{
     unsigned char gameTitle[13];
     unsigned char gameCode[5];
     unsigned char makerCode[3];

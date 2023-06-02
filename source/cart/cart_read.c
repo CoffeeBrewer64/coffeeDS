@@ -110,7 +110,7 @@ unsigned int cartRead_get_arm7RamAddress()
 
 unsigned int cartRead_get_arm7Size()
 {
-   return current_header.arm7Size;
+    return current_header.arm7Size;
 }
 
 unsigned int cartRead_get_fntOffset()
