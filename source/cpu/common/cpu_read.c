@@ -9,8 +9,7 @@
 FILE* game_file;
 bool isInit = false;
 
-// Call at cpu_init()
-// TODO: Add cpu_init()
+// Called at cpu_init()
 int cpu_read_init()
 {
     LOG("Starting CPU...");
