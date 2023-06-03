@@ -5,6 +5,8 @@
 #include <types/ndstypes.h>
 #include <stdio.h>
 #include <cpu/common/cpu_read.h>
+#include <types/arm7_types.h>
+#include <cpu/arm7/cpu_arm7_init.h>
 
 FILE* game_file;
 bool isInit = false;
@@ -81,4 +83,11 @@ uint32 cpu_read_arm9_opcode(uint32 opcodeIndex)
     }
     fclose(game_file);
     return opcode;
+}
+
+arm7_registers_whole cpu_read_arm7_registers_whole()
+{
+    arm7_registers_whole _new;
+    _new = current_arm7_registers;
+    return _new;
 }
