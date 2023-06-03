@@ -3,7 +3,7 @@
 
 #include <types/arm7_types.h>
 
-static arm7_registers_whole current_arm7_registers;
+static arm7_registers_whole current_arm7_registers __attribute__((unused));
 
 int cpu_arm7_init();
 
