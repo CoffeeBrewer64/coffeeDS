@@ -64,6 +64,7 @@ void main_loop()
                 {
                     case SDLK_q:
                         isRunning = false;
+                        return;
                         break;
 
                     case SDLK_1:
