@@ -65,7 +65,7 @@ void main_loop()
                         isRunning = false;
                         break;
 
-                    case SDLK_RETURN:
+                    case SDLK_1:
                         main_dumpOpcodes();
                         break;
 
