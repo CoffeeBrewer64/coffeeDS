@@ -11,7 +11,7 @@
 void debug_dumpOpcodes()
 {
     int repeat_times = 50000000; // TODO: Find a way to get the total number of opcodes in a whole ROM
-    int x = 9999999;
+    int x = 0;
     int grab_error_count = 0;
     int seek_error_count = 0;
     repeat_times = repeat_times + 1; // Goes through repeat_times - 1 times if this is NOT present
