@@ -27,7 +27,13 @@ int cpu_read_init()
     return 1;
 }
 
-uint16 cpu_read_arm7_opcode(uint16 opcodeIndex)
+// Will read (and return) whatever opcode is at the provided opcode index
+// Done as THUMB mode
+// TODO: Spot 32 bit instructions and skip over them
+// TODO: Call out 32 bit instructions
+// TODO: Skip over the ROM header
+// TODO: Account for instruction arguments
+uint16 cpu_read_thumb_opcode(uint16 opcodeIndex)
 {
     uint16 opcode;
     game_file = fopen("game.nds", "rb");
@@ -55,9 +61,9 @@ uint16 cpu_read_arm7_opcode(uint16 opcodeIndex)
     return opcode;
 }
 
-// TODO: More general cpu_read_opcode
-
-uint32 cpu_read_arm9_opcode(uint32 opcodeIndex)
+// TODO: Account for instruction arguments
+// TODO: Skip over the ROM header
+uint32 cpu_read_arm_opcode(uint32 opcodeIndex)
 {
     uint32 opcode;
     game_file = fopen("game.nds", "rb");

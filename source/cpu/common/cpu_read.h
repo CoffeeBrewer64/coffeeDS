@@ -4,7 +4,7 @@
 #include <types/ndstypes.h>
 
 int cpu_read_init();
-uint16 cpu_read_arm7_opcode(uint16 opcodeIndex);
-uint32 cpu_read_arm9_opcode(uint32 opcodeIndex);
+uint16 cpu_read_thumb_opcode(uint16 opcodeIndex);
+uint32 cpu_read_arm_opcode(uint32 opcodeIndex);
 
 #endif // CPU_READ_H_INCLUDED

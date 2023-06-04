@@ -1,6 +1,7 @@
 #include <util/util_log.h>
 #include <cart/cart_read.h>
 #include <cpu/cpu.h>
+#include <cpu/common/cpu_read.h>
 #include <cpu/arm7/cpu_arm7_init.h>
 #include <stdbool.h>
 #include <main.h>
@@ -64,6 +65,10 @@ void main_loop()
                         isRunning = false;
                         break;
 
+                    case SDLK_RETURN:
+                        main_dumpOpcodes();
+                        break;
+
                     case SDLK_m:
                         switch (macro_mode)
                         {
@@ -103,4 +108,23 @@ void main_loop()
 
         }
     }
+}
+
+// TODO: Dump to a separate file
+// TODO: Put this in a debug section
+void main_dumpOpcodes()
+{
+    int repeat_times = 1000000; // TODO: Find a way to get the total number of opcodes in a whole ROM
+    int x = 0;
+    repeat_times = repeat_times + 1; // Goes through repeat_times - 1 times if this is NOT present
+    while (x != repeat_times)
+    {
+        LOG("Opcode with index %i: 0x%X",x, cpu_read_arm_opcode(x));
+        x++;
+        if (x == repeat_times)
+        {
+            return;
+        }
+    }
+    return;
 }
