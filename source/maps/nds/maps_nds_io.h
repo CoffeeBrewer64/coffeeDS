@@ -14,4 +14,11 @@ nds_io_map NDS_IO_MAP_4000064h = { "4000064h", 4, "DISPCAPCNT - Display Capture 
 nds_io_map NDS_IO_MAP_4000068h = { "4000068h", 4, "DISP_MMEM_FIFO - Main Memory Display FIFO", 2}; // Assuming can read
 nds_io_map NDS_IO_MAP_400006Ch = { "400006Ch", 2, "2D Engine A - MASTER_BRIGHT - Master Brightness Up/Down", 2}; // Assuming can read and/or write
 
+/// ARM9 DMA, Timers, and Keypad ///
+nds_io_map NDS_IO_MAP_40000B0h = { "40000B0h", 30, "DMA Channel 0..3", 2}; // Assuming read and write
+nds_io_map NDS_IO_MAP_40000E0h = { "40000E0h", 10, "DMA FILL Registers for Channel 0..3", 2}; // Assuming read and write
+nds_io_map NDS_IO_MAP_4000100h = { "4000100h", 10, "Timers 0..3", 2}; //Assuming read and write
+nds_io_map NDS_IO_MAP_4000130h = { "4000130h", 2, "KEYINPUT", 2}; // Assuming read and write
+nds_io_map NDS_IO_MAP_4000132h = { "4000132h", 2, "KEYCNT", 2}; // Assuming read and write
+
 #endif // MAPS_NDS_IO_H_INCLUDED
