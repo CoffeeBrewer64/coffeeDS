@@ -11,6 +11,10 @@ SDL_Event event;
 SDL_Window* main_window;
 SDL_Renderer* main_renderer;
 
+// The NDS screen is 256x192. 192 * 2 = 384 (this allows us to have two screens on display during emulation)
+const int screen_size_x = 256;
+const int screen_size_y = 384;
+
 int main()
 {
     isRunning = true;
@@ -18,7 +22,7 @@ int main()
     cpu_init();
     cartRead_init();
 
-    main_window = SDL_CreateWindow("coffeeDS", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 256, 384, 0);
+    main_window = SDL_CreateWindow("coffeeDS", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, screen_size_x, screen_size_y, 0);
     #ifdef CONFIG_USE_HARDWARE_ACCELERATION
     main_renderer = SDL_CreateRenderer(main_window, 0, SDL_RENDERER_ACCELERATED);
     #else
