@@ -7,12 +7,14 @@
 #include <main.h>
 #include <SDL2/SDL.h>
 #include <debug/debug_opcodes.h>
+#include <debug/debug_cart.h>
 
 bool isRunning;
 SDL_Event event;
 SDL_Window* main_window;
 SDL_Renderer* main_renderer;
 
+// TODO: Add a config system which reads the config file saved on the disk and adjusts the following values accordingly
 // The NDS screen is 256x192. 192 * 2 = 384 (this allows us to have two screens on display during emulation)
 const int screen_size_x = 256;
 const int screen_size_y = 384;
@@ -69,6 +71,10 @@ void main_loop()
 
                     case SDLK_1:
                         debug_dumpOpcodes();
+                        break;
+
+                    case SDLK_2:
+                        debug_dumpNdsHeader();
                         break;
 
                     case SDLK_m:

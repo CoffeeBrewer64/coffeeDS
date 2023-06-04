@@ -263,11 +263,6 @@ unsigned int cartRead_get_secureAreaCrc()
     return current_header.secureAreaCrc;
 }
 
-unsigned int cartRead_get_romSize()
-{
-    return current_header.romSize;
-}
-
 unsigned int cartRead_get_saveType()
 {
     return current_header.saveType;

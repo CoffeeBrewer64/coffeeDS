@@ -219,7 +219,6 @@ typedef struct
     unsigned int titleLogoOffset;
     unsigned int titleLogoSize;
     unsigned int secureAreaCrc;
-    unsigned int romSize;
     unsigned int saveType;
     unsigned int reserved3[2];
     unsigned int arm9LoadAddress;
