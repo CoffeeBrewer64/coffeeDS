@@ -14,6 +14,8 @@ SDL_Renderer* main_renderer;
 // The NDS screen is 256x192. 192 * 2 = 384 (this allows us to have two screens on display during emulation)
 const int screen_size_x = 256;
 const int screen_size_y = 384;
+bool macro_mode = false; // NOTE: Macro mode = GBA mode
+bool macro_mode_useTopScreen = true; // If true, the top screen will be used. If false, the bottom screen will be used.
 
 int main()
 {
@@ -23,11 +25,11 @@ int main()
     cartRead_init();
 
     main_window = SDL_CreateWindow("coffeeDS", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, screen_size_x, screen_size_y, 0);
-    #ifdef CONFIG_USE_HARDWARE_ACCELERATION
+#ifdef CONFIG_USE_HARDWARE_ACCELERATION
     main_renderer = SDL_CreateRenderer(main_window, 0, SDL_RENDERER_ACCELERATED);
-    #else
+#else
     main_renderer = SDL_CreateRenderer(main_window, 0, 0);
-    #endif // CONFIG_USE_HARDWARE_ACCELERATION
+#endif // CONFIG_USE_HARDWARE_ACCELERATION
 
     main_loop();
 
@@ -51,11 +53,42 @@ void main_loop()
             {
                 isRunning = false;
             }
+            // TODO: Use switch and case instead of lots of nested if statements
             if (event.type == SDL_KEYDOWN)
             {
                 if (event.key.keysym.sym == SDLK_q)
                 {
                     isRunning = false;
+                }
+
+                if (event.key.keysym.sym == SDLK_m)
+                {
+                    switch (macro_mode)
+                    {
+                        case false:
+                            macro_mode = true;
+                            LOG("Set macro mode to true");
+                            break;
+                        case true:
+                            macro_mode = false;
+                            LOG("Set macro mode to false");
+                            break;
+                    }
+                }
+
+                if (event.key.keysym.sym == SDLK_n)
+                {
+                    switch (macro_mode_useTopScreen)
+                    {
+                        case false:
+                            macro_mode_useTopScreen = true;
+                            LOG("Switched from using the bottom screen to the top screen in macro mode!");
+                            break;
+                        case true:
+                            macro_mode_useTopScreen = false;
+                            LOG("Switched from using the top screen to the bottom screen in macro mode!");
+                            break;
+                    }
                 }
             }
 
