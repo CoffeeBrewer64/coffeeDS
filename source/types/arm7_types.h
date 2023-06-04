@@ -6,7 +6,6 @@
 #include <types/ndstypes.h>
 
 // TODO: Make ARM9 registers
-// TODO: Functions to copy data from one register type to another
 
 // There's a total of 37 registers (32bit each), 31 general registers (Rxx) and 6 status registers (xPSR).
 typedef struct
