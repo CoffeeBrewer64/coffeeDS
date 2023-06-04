@@ -14,6 +14,8 @@ SDL_Renderer* main_renderer;
 // The NDS screen is 256x192. 192 * 2 = 384 (this allows us to have two screens on display during emulation)
 const int screen_size_x = 256;
 const int screen_size_y = 384;
+int screen_size_x_multipler = 1;
+int screen_size_y_multiplier = 1;
 bool macro_mode = false; // NOTE: Macro mode = GBA mode
 bool macro_mode_useTopScreen = true; // If true, the top screen will be used. If false, the bottom screen will be used.
 
@@ -24,7 +26,7 @@ int main()
     cpu_init();
     cartRead_init();
 
-    main_window = SDL_CreateWindow("coffeeDS", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, screen_size_x, screen_size_y, 0);
+    main_window = SDL_CreateWindow("coffeeDS", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, screen_size_x * screen_size_x_multipler, screen_size_y * screen_size_y_multiplier, 0);
 #ifdef CONFIG_USE_HARDWARE_ACCELERATION
     main_renderer = SDL_CreateRenderer(main_window, 0, SDL_RENDERER_ACCELERATED);
 #else
