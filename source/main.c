@@ -55,52 +55,52 @@ void main_loop()
             {
                 isRunning = false;
             }
-            // TODO: Use switch and case instead of lots of nested if statements
+
             if (event.type == SDL_KEYDOWN)
             {
-                if (event.key.keysym.sym == SDLK_q)
+                switch (event.key.keysym.sym)
                 {
-                    isRunning = false;
+                    case SDLK_q:
+                        isRunning = false;
+                        break;
+
+                    case SDLK_m:
+                        switch (macro_mode)
+                        {
+                            case false:
+                                macro_mode = true;
+                                LOG("Set macro mode to true");
+                                break;
+                            case true:
+                                macro_mode = false;
+                                LOG("Set macro mode to false");
+                                break;
+                        }
+                        break;
+
+                    case SDLK_n:
+                        switch (macro_mode_useTopScreen)
+                        {
+                            case false:
+                                macro_mode_useTopScreen = true;
+                                LOG("Switched from using the bottom screen to the top screen in macro mode!");
+                                break;
+                            case true:
+                                macro_mode_useTopScreen = false;
+                                LOG("Switched from using the top screen to the bottom screen in macro mode!");
+                                break;
+                        }
+                        break;
                 }
 
-                if (event.key.keysym.sym == SDLK_m)
-                {
-                    switch (macro_mode)
-                    {
-                        case false:
-                            macro_mode = true;
-                            LOG("Set macro mode to true");
-                            break;
-                        case true:
-                            macro_mode = false;
-                            LOG("Set macro mode to false");
-                            break;
-                    }
-                }
+            }
 
-                if (event.key.keysym.sym == SDLK_n)
-                {
-                    switch (macro_mode_useTopScreen)
-                    {
-                        case false:
-                            macro_mode_useTopScreen = true;
-                            LOG("Switched from using the bottom screen to the top screen in macro mode!");
-                            break;
-                        case true:
-                            macro_mode_useTopScreen = false;
-                            LOG("Switched from using the top screen to the bottom screen in macro mode!");
-                            break;
-                    }
-                }
+            // If the reset register of PC is set to -1 (fixing resets with this register is a todo)
+            if (current_arm7_registers.SysAndUser_registers.r15_PC == -1)
+            {
+                isRunning = false;
             }
 
         }
-
-        // If the reset register of PC is set to -1 (fixing resets with this register is a todo)
-        if (current_arm7_registers.SysAndUser_registers.r15_PC == -1)
-        {
-            isRunning = false;
-        }
-
     }
 }
