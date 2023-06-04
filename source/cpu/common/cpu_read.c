@@ -27,6 +27,9 @@ int cpu_read_init()
     return 1;
 }
 
+// TODO: Properly extract opcodes
+// TODO: Verify THUMB opcodes against a pre-existing list of all known opcodes (or, when opcodes are being executed, examine the opcode which failed because it is not an implemented opcode)
+
 // Will read (and return) whatever opcode is at the provided opcode index
 // Done as THUMB mode
 // TODO: Spot 32 bit instructions and skip over them
@@ -45,7 +48,7 @@ uint16 cpu_read_thumb_opcode(uint16 opcodeIndex)
     {
         LOG("Error seeking to opcode index %u in game.nds\n", opcodeIndex);
         fclose(game_file);
-        return opcode;
+        return -999; // Special error code; unlikely to be found in a game's ROM
     }
 
     // Read the opcode
@@ -55,7 +58,7 @@ uint16 cpu_read_thumb_opcode(uint16 opcodeIndex)
     {
         LOG("Error reading opcode from game.nds\n");
         fclose(game_file);
-        return opcode;
+        return -888; // Special error code; unlikely to be found in a game's ROM
     }
     fclose(game_file);
     return opcode;
@@ -75,7 +78,7 @@ uint32 cpu_read_arm_opcode(uint32 opcodeIndex)
     {
         LOG("Error seeking to opcode index %u in game.nds\n", opcodeIndex);
         fclose(game_file);
-        return opcode;
+        return -999; // Special error code; unlikely to be found in a game's ROM
     }
 
     // Read the opcode
@@ -85,7 +88,7 @@ uint32 cpu_read_arm_opcode(uint32 opcodeIndex)
     {
         LOG("Error reading opcode from game.nds\n");
         fclose(game_file);
-        return opcode;
+        return -888; // Special error code; unlikely to be found in a game's ROM
     }
     fclose(game_file);
     return opcode;

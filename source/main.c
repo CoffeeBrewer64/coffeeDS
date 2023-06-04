@@ -6,6 +6,7 @@
 #include <stdbool.h>
 #include <main.h>
 #include <SDL2/SDL.h>
+#include <debug/debug_opcodes.h>
 
 bool isRunning;
 SDL_Event event;
@@ -66,7 +67,7 @@ void main_loop()
                         break;
 
                     case SDLK_1:
-                        main_dumpOpcodes();
+                        debug_dumpOpcodes();
                         break;
 
                     case SDLK_m:
@@ -108,23 +109,4 @@ void main_loop()
 
         }
     }
-}
-
-// TODO: Dump to a separate file
-// TODO: Put this in a debug section
-void main_dumpOpcodes()
-{
-    int repeat_times = 1000000; // TODO: Find a way to get the total number of opcodes in a whole ROM
-    int x = 0;
-    repeat_times = repeat_times + 1; // Goes through repeat_times - 1 times if this is NOT present
-    while (x != repeat_times)
-    {
-        LOG("Opcode with index %i: 0x%X",x, cpu_read_arm_opcode(x));
-        x++;
-        if (x == repeat_times)
-        {
-            return;
-        }
-    }
-    return;
 }
