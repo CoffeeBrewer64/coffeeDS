@@ -31,6 +31,7 @@ int main()
     cartRead_init();
 
     main_window = SDL_CreateWindow("coffeeDS", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, screen_size_x * screen_size_x_multipler, screen_size_y * screen_size_y_multiplier, 0);
+    main_renderer = SDL_CreateRenderer(main_window, 0, 0);
 #ifdef CONFIG_USE_HARDWARE_ACCELERATION
     main_renderer = SDL_CreateRenderer(main_window, 0, SDL_RENDERER_ACCELERATED);
 #else
