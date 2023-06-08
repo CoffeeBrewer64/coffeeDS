@@ -1,3 +1,11 @@
+/*
+Name: util.c
+Description: Source file for all utils
+License: MIT License Copyright (c) CoffeeBrewer64 2023
+Last author: CoffeeBrewer64
+Original author: CoffeeBrewer64
+*/
+
 #include <stdio.h>
 #include <stdarg.h>
 #include <stdbool.h>

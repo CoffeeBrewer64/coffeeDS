@@ -1,3 +1,11 @@
+/*
+Name: main.c
+Description: Main source file
+License: MIT License Copyright (c) CoffeeBrewer64 2023
+Last author: CoffeeBrewer64
+Original author: CoffeeBrewer64
+*/
+
 #include <util/util_log.h>
 #include <cart/cart_read.h>
 #include <cpu/cpu.h>
@@ -13,6 +21,8 @@ bool isRunning;
 SDL_Event event;
 SDL_Window* main_window;
 SDL_Renderer* main_renderer;
+
+// TODO: Clear up the difference between opcodes (doesn't include arguments) and instructions (includes arguments)
 
 // TODO: Add a config system which reads the config file saved on the disk and adjusts the following values accordingly
 // The NDS screen is 256x192. 192 * 2 = 384 (this allows us to have two screens on display during emulation)

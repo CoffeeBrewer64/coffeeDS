@@ -1,4 +1,11 @@
-// Functions for reading the .nds instructions
+/*
+Name: cpu_read.c
+Description: Functions for reading the .nds instructions
+License: MIT License Copyright (c) CoffeeBrewer64 2023
+Last author: CoffeeBrewer64
+Original author: CoffeeBrewer64
+*/
+
 // Conversion to be dealt with in cpu_convert.c/.h
 
 #include <util/util_log.h>

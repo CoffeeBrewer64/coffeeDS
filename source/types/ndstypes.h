@@ -1,3 +1,11 @@
+/*
+Name: ndstypes.h
+Description: Header file for the standard NDS typedefs
+License: MIT License Copyright (c) CoffeeBrewer64 2023
+Last author: CoffeeBrewer64
+Original author: CoffeeBrewer64
+*/
+
 #ifndef NDSTYPES_H_INCLUDED
 #define NDSTYPES_H_INCLUDED
 

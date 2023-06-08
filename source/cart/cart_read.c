@@ -1,3 +1,11 @@
+/*
+Name: cart_read.c
+Description: File for reading data from the "cart" (cartridge, the .nds file)
+License: MIT License Copyright (c) CoffeeBrewer64 2023
+Last author: CoffeeBrewer64
+Original author: CoffeeBrewer64
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

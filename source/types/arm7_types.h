@@ -1,3 +1,11 @@
+/*
+Name: arm7_types.h
+Description: Header file for the ARM7 types
+License: MIT License Copyright (c) CoffeeBrewer64 2023
+Last author: CoffeeBrewer64
+Original author: CoffeeBrewer64
+*/
+
 // https://problemkaputt.de/gbatek.htm#armcpuoverview
 
 #ifndef ARM7_TYPES_H_INCLUDED

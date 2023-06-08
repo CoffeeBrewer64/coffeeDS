@@ -1,3 +1,11 @@
+/*
+Name: maps_nds_io.h
+Description: Header file for the NDS IO port maps
+License: MIT License Copyright (c) CoffeeBrewer64 2023
+Last author: CoffeeBrewer64
+Original author: CoffeeBrewer64
+*/
+
 #ifndef MAPS_NDS_IO_H_INCLUDED
 #define MAPS_NDS_IO_H_INCLUDED
 

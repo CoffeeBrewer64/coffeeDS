@@ -1,3 +1,11 @@
+/*
+Name: maps_types.h
+Description: Header file for the maps typedefs
+License: MIT License Copyright (c) CoffeeBrewer64 2023
+Last author: CoffeeBrewer64
+Original author: CoffeeBrewer64
+*/
+
 #ifndef MAPS_TYPES_H_INCLUDED
 #define MAPS_TYPES_H_INCLUDED
 

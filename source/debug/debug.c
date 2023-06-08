@@ -1,3 +1,11 @@
+/*
+Name: debug.c
+Description: Source file for ALL debugging
+License: MIT License Copyright (c) CoffeeBrewer64 2023
+Last author: CoffeeBrewer64
+Original author: CoffeeBrewer64
+*/
+
 #include <cpu/common/cpu_read.h>
 #include <util/util_log.h>
 #include <stdio.h>
