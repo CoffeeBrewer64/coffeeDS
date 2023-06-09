@@ -8,8 +8,8 @@ Original author: CoffeeBrewer64
 
 // Please see https://problemkaputt.de/gbatek.htm#biosfunctionsummary
 
-#include <types/ndstypes.h>
 #include <cpu/arm7/cpu_arm7_init.h>
+#include <bios/bios_funcs.h>
 
 #include <bios/bios.h>
 
@@ -75,8 +75,7 @@ int bios_onUpdate_arm7()
         case 0x1D:
         // GetBootProcs
         case 0x20:
-        // Crash
-        // TODO: Crash (0x20 and above)
+            bios_funcs_arm7_crash();
         /// Invalid
         case 0x01:
             break;
@@ -97,7 +96,7 @@ int bios_onUpdate_arm7()
     }
     if (current_arm7_registers.SysAndUser_registers.r0 > 0x20)
     {
-        // Crash
+        bios_funcs_arm7_crash();
     }
 
     switch (current_arm7_registers.SysAndUser_registers.r1)
@@ -154,8 +153,7 @@ int bios_onUpdate_arm7()
         case 0x1D:
         // GetBootProcs
         case 0x20:
-        // Crash
-        // TODO: Crash (0x20 and above)
+            bios_funcs_arm7_crash();
         /// Invalid
         case 0x01:
             break;
@@ -176,7 +174,7 @@ int bios_onUpdate_arm7()
     }
     if (current_arm7_registers.SysAndUser_registers.r1 > 0x20)
     {
-        // Crash
+        bios_funcs_arm7_crash();
     }
 
     switch (current_arm7_registers.SysAndUser_registers.r2)
@@ -233,8 +231,7 @@ int bios_onUpdate_arm7()
         case 0x1D:
         // GetBootProcs
         case 0x20:
-        // Crash
-        // TODO: Crash (0x20 and above)
+            bios_funcs_arm7_crash();
         /// Invalid
         case 0x01:
             break;
@@ -255,7 +252,7 @@ int bios_onUpdate_arm7()
     }
     if (current_arm7_registers.SysAndUser_registers.r2 > 0x20)
     {
-        // Crash
+        bios_funcs_arm7_crash();
     }
 
     switch (current_arm7_registers.SysAndUser_registers.r3)
@@ -312,8 +309,7 @@ int bios_onUpdate_arm7()
         case 0x1D:
         // GetBootProcs
         case 0x20:
-        // Crash
-        // TODO: Crash (0x20 and above)
+            bios_funcs_arm7_crash();
         /// Invalid
         case 0x01:
             break;
@@ -334,7 +330,7 @@ int bios_onUpdate_arm7()
     }
     if (current_arm7_registers.SysAndUser_registers.r3 > 0x20)
     {
-        // Crash
+        bios_funcs_arm7_crash();
     }
 
     return 0;
