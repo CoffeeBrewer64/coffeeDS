@@ -10,17 +10,20 @@ Original author: CoffeeBrewer64
 
 #include <cpu/common/cpu_read.h>
 #include <util/util_log.h>
+#include <util/util_file.h>
 #include <types/ndstypes.h>
 #include <emuenv/emuenv.h>
 
 #include <debug/debug_opcodes.h>
 #include <debug/debug_cart.h>
 
-// TODO: Dump to a separate file
 // TODO: Option of whether or not to print only the opcode (in hex)
 // TODO: Option of whether or not to print only the opcode (in a standard form)
 void debug_dumpOpcodes()
 {
+    FILE* _file = fopen("debug_opcodeDump.txt", "w");
+    fclose(_file);
+    FILE* file = fopen("debug_opcodeDump.txt", "a");
     int repeat_times = 50000000; // TODO: Find a way to get the total number of opcodes in a whole ROM
     int x = 0;
     int grab_error_count = 0;
@@ -28,10 +31,11 @@ void debug_dumpOpcodes()
     repeat_times = repeat_times + 1; // Goes through repeat_times - 1 times if this is NOT present
     while (x != repeat_times)
     {
-        // TODO: Queue up all logging results to be written to a separate file later on
-        // NOTE: using LOG instead of printf is bad for the disk's health
+        // TODO: Queue up all logging results to be written to a separate file later
+        // NOTE: Dumping it all to a file is VERY bad for the disk's health
         uint32 y = cpu_read_arm_opcode(x);
         printf("Opcode with opcode index %i: (HEX) %X - (INT) %i\n", x, y, y);
+        fprintf(file, "%i: 0x%X - %i\n", x, y, y);
         x++;
         if (x == repeat_times)
         {
@@ -56,13 +60,13 @@ void debug_dumpOpcodes()
             return;
         }
     }
+    fclose(file);
     return;
 }
 
 // TODO: Dump into own file
 void debug_dumpNdsHeader()
 {
-
     printf("=====\nNDS HEADER DUMP for game with title \"%s\":\n", emuenv_currentHeader.gameTitle);
     printf("Game title: %s\n", emuenv_currentHeader.gameTitle);
     printf("Game code: %s\n", emuenv_currentHeader.gameCode);

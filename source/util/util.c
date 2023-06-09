@@ -106,6 +106,7 @@ void util_file_writeToFile(const char* fileName, const char* format, ...)
 
 void util_file_makeFile(const char* fileName)
 {
+    LOG("Making file with name %s", fileName);
     FILE* file = fopen(fileName, "w");
     if (file == NULL)
     {
