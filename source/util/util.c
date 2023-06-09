@@ -103,3 +103,14 @@ void util_file_writeToFile(const char* fileName, const char* format, ...)
     fclose(file);
     return;
 }
+
+void util_file_makeFile(const char* fileName)
+{
+    FILE* file = fopen(fileName, "w");
+    if (file == NULL)
+    {
+        LOG("Could not create file with name \"%s\"", fileName);
+    }
+    fclose(file);
+    return;
+}

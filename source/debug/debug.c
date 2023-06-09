@@ -62,6 +62,7 @@ void debug_dumpOpcodes()
 // TODO: Dump into own file
 void debug_dumpNdsHeader()
 {
+
     printf("=====\nNDS HEADER DUMP for game with title \"%s\":\n", emuenv_currentHeader.gameTitle);
     printf("Game title: %s\n", emuenv_currentHeader.gameTitle);
     printf("Game code: %s\n", emuenv_currentHeader.gameCode);
