@@ -17,6 +17,7 @@ Original author: CoffeeBrewer64
 #include <debug/debug_opcodes.h>
 #include <debug/debug_cart.h>
 #include <emuenv/emuenv.h>
+#include <bios/bios.h>
 
 bool isRunning;
 SDL_Event event;
@@ -120,7 +121,9 @@ void main_loop()
 
             }
 
-            // If the reset register of PC is set to -1 (fixing resets with this register is a todo)
+            /// BIOS updates
+            bios_onUpdate_arm7();
+
             if (current_arm7_registers.SysAndUser_registers.r15_PC == -1)
             {
                 isRunning = false;
