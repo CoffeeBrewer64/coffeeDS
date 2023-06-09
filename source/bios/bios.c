@@ -78,21 +78,21 @@ int bios_onUpdate_arm7()
             bios_funcs_arm7_crash();
         /// Invalid
         case 0x01:
-            break;
+            bios_funcs_arm7_invalid();
         case 0x02:
-            break;
+            bios_funcs_arm7_invalid();
         case 0x0A:
-            break;
+            bios_funcs_arm7_invalid();
         case 0x16:
-            break;
+            bios_funcs_arm7_invalid();
         case 0x17:
-            break;
+            bios_funcs_arm7_invalid();
         case 0x18:
-            break;
+            bios_funcs_arm7_invalid();
         case 0x19:
-            break;
+            bios_funcs_arm7_invalid();
         case 0x1E:
-            break;
+            bios_funcs_arm7_invalid();
     }
     if (current_arm7_registers.SysAndUser_registers.r0 > 0x20)
     {
@@ -156,21 +156,21 @@ int bios_onUpdate_arm7()
             bios_funcs_arm7_crash();
         /// Invalid
         case 0x01:
-            break;
+            bios_funcs_arm7_invalid();
         case 0x02:
-            break;
+            bios_funcs_arm7_invalid();
         case 0x0A:
-            break;
+            bios_funcs_arm7_invalid();
         case 0x16:
-            break;
+            bios_funcs_arm7_invalid();
         case 0x17:
-            break;
+            bios_funcs_arm7_invalid();
         case 0x18:
-            break;
+            bios_funcs_arm7_invalid();
         case 0x19:
-            break;
+            bios_funcs_arm7_invalid();
         case 0x1E:
-            break;
+            bios_funcs_arm7_invalid();
     }
     if (current_arm7_registers.SysAndUser_registers.r1 > 0x20)
     {
@@ -234,21 +234,21 @@ int bios_onUpdate_arm7()
             bios_funcs_arm7_crash();
         /// Invalid
         case 0x01:
-            break;
+            bios_funcs_arm7_invalid();
         case 0x02:
-            break;
+            bios_funcs_arm7_invalid();
         case 0x0A:
-            break;
+            bios_funcs_arm7_invalid();
         case 0x16:
-            break;
+            bios_funcs_arm7_invalid();
         case 0x17:
-            break;
+            bios_funcs_arm7_invalid();
         case 0x18:
-            break;
+            bios_funcs_arm7_invalid();
         case 0x19:
-            break;
+            bios_funcs_arm7_invalid();
         case 0x1E:
-            break;
+            bios_funcs_arm7_invalid();
     }
     if (current_arm7_registers.SysAndUser_registers.r2 > 0x20)
     {
@@ -312,21 +312,21 @@ int bios_onUpdate_arm7()
             bios_funcs_arm7_crash();
         /// Invalid
         case 0x01:
-            break;
+            bios_funcs_arm7_invalid();
         case 0x02:
-            break;
+            bios_funcs_arm7_invalid();
         case 0x0A:
-            break;
+            bios_funcs_arm7_invalid();
         case 0x16:
-            break;
+            bios_funcs_arm7_invalid();
         case 0x17:
-            break;
+            bios_funcs_arm7_invalid();
         case 0x18:
-            break;
+            bios_funcs_arm7_invalid();
         case 0x19:
-            break;
+            bios_funcs_arm7_invalid();
         case 0x1E:
-            break;
+            bios_funcs_arm7_invalid();
     }
     if (current_arm7_registers.SysAndUser_registers.r3 > 0x20)
     {

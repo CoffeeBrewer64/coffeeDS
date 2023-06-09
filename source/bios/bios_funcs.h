@@ -9,6 +9,7 @@ Original author: CoffeeBrewer64
 #ifndef BIOS_FUNCS_H_INCLUDED
 #define BIOS_FUNCS_H_INCLUDED
 
+void bios_funcs_arm7_invalid();
 void bios_funcs_arm7_crash();
 
 #endif // BIOS_FUNCS_H_INCLUDED

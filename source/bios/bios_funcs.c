@@ -8,6 +8,14 @@ Original author: CoffeeBrewer64
 
 #include <cpu/arm7/cpu_arm7_init.h>
 
+#include <util/util_log.h>
+
+void bios_funcs_arm7_invalid()
+{
+    LOG("ARM7 BIOS: Invalid BIOS function call (from the ROM)");
+    return;
+}
+
 void bios_funcs_arm7_crash()
 {
     current_arm7_registers.SysAndUser_registers.r15_PC = -1;
