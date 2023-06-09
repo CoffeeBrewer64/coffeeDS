@@ -31,7 +31,7 @@ int cpu_read_init()
     fclose(game_file);
     LOG("Started CPU read!");
     isInit = true;
-    return 1;
+    return 0;
 }
 
 // TODO: Properly extract opcodes
@@ -99,11 +99,4 @@ uint32 cpu_read_arm_opcode(uint32 opcodeIndex)
     }
     fclose(game_file);
     return opcode;
-}
-
-arm7_registers_whole cpu_read_arm7_registers_whole()
-{
-    arm7_registers_whole _new;
-    _new = current_arm7_registers;
-    return _new;
 }

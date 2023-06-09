@@ -29,3 +29,4 @@ N: Toggle macro mode screen
 9. Use header files for prototypes and variables, use source (.c) files for prototype definitions
 10. Update the code prolog at the top of every file
 11. Add important notes with `// NOTE:`, todos with `// TODO:` and fixmes with `// FIXME:`
+12. If a function does not need to return any data and has not experienced any problems, it should return 0.

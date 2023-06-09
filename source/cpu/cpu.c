@@ -17,5 +17,5 @@ int cpu_init()
     cpu_arm7_init();
     cpu_read_init();
     LOG("Initialised CPU!");
-    return 1;
+    return 0;
 }

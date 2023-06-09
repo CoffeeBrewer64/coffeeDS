@@ -16,6 +16,7 @@ Original author: CoffeeBrewer64
 #include <SDL2/SDL.h>
 #include <debug/debug_opcodes.h>
 #include <debug/debug_cart.h>
+#include <emuenv/emuenv.h>
 
 bool isRunning;
 SDL_Event event;
