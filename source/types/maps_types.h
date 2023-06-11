@@ -9,9 +9,12 @@ Original author: CoffeeBrewer64
 #ifndef MAPS_TYPES_H_INCLUDED
 #define MAPS_TYPES_H_INCLUDED
 
+#include <types/ndstypes.h>
+
 typedef struct
 {
     const char* map_id;
+    uint32 map_value;
     int argument_count;
     const char* description; // Pull from https://problemkaputt.de/gbatek.htm#dsiomaps
     int permissions; // 0 = read, 1 = write, 2 = read and write
@@ -20,6 +23,7 @@ typedef struct
 typedef struct
 {
     const char* map_id;
+    uint32 map_value;
     int argument_count;
     const char* description; // Pull from https://problemkaputt.de/gbatek.htm#dsiiomap
     int permissions; // 0 = read, 1 = write, 2 = read and write
@@ -28,6 +32,7 @@ typedef struct
 typedef struct
 {
     const char* map_id;
+    uint32 map_value;
     int argument_count;
     int permissions; // 0 = read, 1 = write, 2 = read and write
     const char* name;
@@ -36,6 +41,6 @@ typedef struct
 
 // TODO: DS 3D map type
 // TODO: DS RAM map type
-// TODO: GBA IO map type
+// TODO: DSi IO map type
 
 #endif // MAPS_TYPES_H_INCLUDED
