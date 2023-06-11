@@ -25,6 +25,15 @@ typedef struct
     int permissions; // 0 = read, 1 = write, 2 = read and write
 } ndsi_io_map;
 
+typedef struct
+{
+    const char* map_id;
+    int argument_count;
+    int permissions; // 0 = read, 1 = write, 2 = read and write
+    const char* name;
+    const char* description;
+} gba_io_map;
+
 // TODO: DS 3D map type
 // TODO: DS RAM map type
 // TODO: GBA IO map type
