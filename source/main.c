@@ -35,7 +35,7 @@ int screen_size_y_multiplier = 1;
 bool macro_mode = false; // NOTE: Macro mode = GBA mode
 bool macro_mode_useTopScreen = true; // If true, the top screen will be used. If false, the bottom screen will be used.
 
-int main()
+int main(int argc, char *argv[])
 {
     isRunning = true;
     LOG("Started coffeeDS!");

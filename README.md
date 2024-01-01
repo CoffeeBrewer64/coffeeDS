@@ -1,5 +1,5 @@
 # coffeeDS
-NDS emulator in C.
+NDS emulator written in C.
 
 ### Download
 
