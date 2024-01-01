@@ -6,6 +6,8 @@ Last author: CoffeeBrewer64
 Original author: CoffeeBrewer64
 */
 
+#define SDL_MAIN_HANDLED
+
 #include <util/util_log.h>
 #include <cart/cart_read.h>
 #include <cpu/cpu.h>
